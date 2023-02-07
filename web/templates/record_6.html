@@ -1,0 +1,178 @@
+{% extends 'base.html' %} {% block container %}
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800 fw-bold">Permission Request Record</h1>
+        <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
+    </div>
+
+    <!-- Content Row -->
+
+    <div class="row">
+        <!-- Area Chart -->
+        <div class="col-xl-12 col-lg-12">
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Prayer Summary Record (1<sup>st</sup> Semester)</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="row" rowspan="2" class="text-center align-middle">Month</th>
+                                <th scope="row" rowspan="2" class="text-center align-middle">Quantity</th>
+                                <th scope="col" colspan="5" class="text-center">Number of Missing Times</th>
+                            </tr>
+                            <tr>
+                                <th class="text-center">Subh</th>
+                                <th class="text-center">Dzhur</th>
+                                <th class="text-center">Ashr</th>
+                                <th class="text-center">Maghrib</th>
+                                <th class="text-center">Isya'</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center">Semester 1<sup>st</sup></td>
+                                <td class="text-center align-middle" rowspan="2">{{ qty }}</td>
+                                {% for datas in data %} {% if datas.semester == 1 %} {% if datas.id == 1 %}
+                                <td class="text-center align-middle" rowspan="2">{{ datas.subh }}</td>
+                                <td class="text-center align-middle" rowspan="2">{{ datas.dzuhr }}</td>
+                                <td class="text-center align-middle" rowspan="2">{{ datas.ashr }}</td>
+                                <td class="text-center align-middle" rowspan="2">{{ datas.maghrib }}</td>
+                                <td class="text-center align-middle" rowspan="2">{{ datas.isya }}</td>
+                                {% endif %} {% endif %} {% endfor %}
+                            </tr>
+                            <tr>
+                                <td class="text-center">May</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">June</td>
+                                <td class="text-center">{{ qty2 }}</td>
+                                {% for datas in data %} {% if datas.semester == 1 %} {% if datas.id == 2 %}
+                                <td class="text-center">{{ datas.subh }}</td>
+                                <td class="text-center">{{ datas.dzuhr }}</td>
+                                <td class="text-center">{{ datas.ashr }}</td>
+                                <td class="text-center">{{ datas.maghrib }}</td>
+                                <td class="text-center">{{ datas.isya }}</td>
+                                {% endif %} {% endif %} {% endfor %}
+                            </tr>
+                            <tr>
+                                <td class="text-center">July</td>
+                                <td class="text-center">{{ qty3 }}</td>
+                                {% for datas in data %} {% if datas.semester == 1 %} {% if datas.id == 3 %}
+                                <td class="text-center">{{ datas.subh }}</td>
+                                <td class="text-center">{{ datas.dzuhr }}</td>
+                                <td class="text-center">{{ datas.ashr }}</td>
+                                <td class="text-center">{{ datas.maghrib }}</td>
+                                <td class="text-center">{{ datas.isya }}</td>
+                                {% endif %} {% endif %} {% endfor %}
+                            </tr>
+                            <tr>
+                                <td class="text-center">August</td>
+                                <td class="text-center">{{ qty4 }}</td>
+                                {% for datas in data %} {% if datas.semester == 1 %} {% if datas.id == 4 %}
+                                <td class="text-center">{{ datas.subh }}</td>
+                                <td class="text-center">{{ datas.dzuhr }}</td>
+                                <td class="text-center">{{ datas.ashr }}</td>
+                                <td class="text-center">{{ datas.maghrib }}</td>
+                                <td class="text-center">{{ datas.isya }}</td>
+                                {% endif %} {% endif %} {% endfor %}
+                            </tr>
+                            <tr>
+                                <td class="text-center">September</td>
+                                <td class="text-center">{{ qty5 }}</td>
+                                {% for datas in data %} {% if datas.semester == 1 %} {% if datas.id == 5 %}
+                                <td class="text-center">{{ datas.subh }}</td>
+                                <td class="text-center">{{ datas.dzuhr }}</td>
+                                <td class="text-center">{{ datas.ashr }}</td>
+                                <td class="text-center">{{ datas.maghrib }}</td>
+                                <td class="text-center">{{ datas.isya }}</td>
+                                {% endif %} {% endif %} {% endfor %}
+                            </tr>
+                            <tr>
+                                <td class="text-center">Total</td>
+                                <td class="text-center">{{qty5+qty4+qty3+qty2+qty}}</td>
+                                <td class="text-center"></td>
+                                <td class="text-center"></td>
+                                <td class="text-center"></td>
+                                <td class="text-center"></td>
+                                <td class="text-center"></td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">Semester 2<sup>nd</sup></td>
+                                {% for datas in data %} {% if datas.semester == 2 %} {% if datas.id == 6 %}
+                                <td class="text-center align-middle" rowspan="2">{{ qty6 }}</td>
+                                <td class="text-center align-middle" rowspan="2">{{ datas.subh }}</td>
+                                <td class="text-center align-middle" rowspan="2">{{ datas.dzuhr }}</td>
+                                <td class="text-center align-middle" rowspan="2">{{ datas.ashr }}</td>
+                                <td class="text-center align-middle" rowspan="2">{{ datas.maghrib }}</td>
+                                <td class="text-center align-middle" rowspan="2">{{ datas.isya }}</td>
+                                {% endif %} {% endif %} {% endfor %}
+                            </tr>
+                            <tr>
+                                <td class="text-center">November</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">Desember</td>
+                                <td class="text-center">{{ qty7 }}</td>
+                                {% for datas in data %} {% if datas.semester == 2 %} {% if datas.id == 7 %}
+                                <td class="text-center">{{ datas.subh }}</td>
+                                <td class="text-center">{{ datas.dzuhr }}</td>
+                                <td class="text-center">{{ datas.ashr }}</td>
+                                <td class="text-center">{{ datas.maghrib }}</td>
+                                <td class="text-center">{{ datas.isya }}</td>
+                                {% endif %} {% endif %} {% endfor %}
+                            </tr>
+                            <tr>
+                                <td class="text-center">January</td>
+                                <td class="text-center">{{ qty8 }}</td>
+                                {% for datas in data %} {% if datas.semester == 2 %} {% if datas.id == 8 %}
+                                <td class="text-center">{{ datas.subh }}</td>
+                                <td class="text-center">{{ datas.dzuhr }}</td>
+                                <td class="text-center">{{ datas.ashr }}</td>
+                                <td class="text-center">{{ datas.maghrib }}</td>
+                                <td class="text-center">{{ datas.isya }}</td>
+                                {% endif %} {% endif %} {% endfor %}
+                            </tr>
+                            <tr>
+                                <td class="text-center">February</td>
+                                <td class="text-center">{{ qty9 }}</td>
+                                {% for datas in data %} {% if datas.semester == 2 %} {% if datas.id == 9 %}
+                                <td class="text-center">{{ datas.subh }}</td>
+                                <td class="text-center">{{ datas.dzuhr }}</td>
+                                <td class="text-center">{{ datas.ashr }}</td>
+                                <td class="text-center">{{ datas.maghrib }}</td>
+                                <td class="text-center">{{ datas.isya }}</td>
+                                {% endif %} {% endif %} {% endfor %}
+                            </tr>
+                            <tr>
+                                <td class="text-center">March</td>
+                                <td class="text-center">{{ qty10 }}</td>
+                                {% for datas in data %} {% if datas.semester == 2 %} {% if datas.id == 10 %}
+                                <td class="text-center">{{ datas.subh }}</td>
+                                <td class="text-center">{{ datas.dzuhr }}</td>
+                                <td class="text-center">{{ datas.ashr }}</td>
+                                <td class="text-center">{{ datas.maghrib }}</td>
+                                <td class="text-center">{{ datas.isya }}</td>
+                                {% endif %} {% endif %} {% endfor %}
+                            </tr>
+                            <tr>
+                                <td class="text-center">Total</td>
+                                <td class="text-center">{{qty10+qty9+qty8+qty7+qty6}}</td>
+                                <td class="text-center"></td>
+                                <td class="text-center"></td>
+                                <td class="text-center"></td>
+                                <td class="text-center"></td>
+                                <td class="text-center"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock container %}

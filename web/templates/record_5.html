@@ -1,0 +1,111 @@
+{% extends 'base.html' %} {% block container %}
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800 fw-bold">Permission Request Record</h1>
+        <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
+    </div>
+
+    <!-- Content Row -->
+
+    <div class="row">
+        <!-- Area Chart -->
+        <div class="col-xl-12 col-lg-12">
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Permission Request Record (1<sup>st</sup> Semester)</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Date</th>
+                                <th scope="col">List</th>
+                                <th scope="col">Leave</th>
+                                <th scope="col">Sign 1</th>
+                                <th scope="col">Entry</th>
+                                <th scope="col">Sign 2</th>
+                                <th scope="col">Note</th>
+                                <th scope="col">Teacher</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for datas in data %} {% if datas.semester == 1 %}
+
+                            <tr>
+                                <td>{{ datas.date }}</td>
+                                <td>{{ datas.rec_list }}</td>
+                                <td>{{ datas.leave }}</td>
+                                {% if datas.sign_1 == True %}
+                                <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                                {% else %}
+                                <td><i class="bi bi-x-circle-fill text-danger"></i></td>
+                                {% endif %}
+                                <td>{{ datas.entry }}</td>
+                                {% if datas.sign_2 == True %}
+                                <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                                {% else %}
+                                <td><i class="bi bi-x-circle-fill text-danger"></i></td>
+                                {% endif %}
+                                <td>{{ datas.note }}</td>
+                                <td>{{ datas.teacher }}</td>
+                            </tr>
+                            {% endif %} {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-12 col-lg-12">
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Permission Request Record (2<sup>nd</sup> Semester)</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Date</th>
+                                <th scope="col">List</th>
+                                <th scope="col">Leave</th>
+                                <th scope="col">Sign 1</th>
+                                <th scope="col">Entry</th>
+                                <th scope="col">Sign 2</th>
+                                <th scope="col">Note</th>
+                                <th scope="col">Teacher</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for datas in data %} {% if datas.semester == 2 %}
+
+                            <tr>
+                                <td>{{ datas.date }}</td>
+                                <td>{{ datas.rec_list }}</td>
+                                <td>{{ datas.leave }}</td>
+                                {% if datas.sign_1 == True %}
+                                <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                                {% else %}
+                                <td><i class="bi bi-x-circle-fill text-danger"></i></td>
+                                {% endif %}
+                                <td>{{ datas.entry }}</td>
+                                {% if datas.sign_2 == True %}
+                                <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                                {% else %}
+                                <td><i class="bi bi-x-circle-fill text-danger"></i></td>
+                                {% endif %}
+                                <td>{{ datas.note }}</td>
+                                <td>{{ datas.teacher }}</td>
+                            </tr>
+                            {% endif %} {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock container %}

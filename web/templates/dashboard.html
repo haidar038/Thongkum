@@ -1,0 +1,152 @@
+{% extends 'base.html' %} {% block container %}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <!-- <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+                            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                        </div> -->
+
+    <!-- Content Row -->
+    <div class="row">
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-6 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Task</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{total}}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-users fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-6 col-md-6 mb-4">
+            <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks Progress</div>
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-auto">
+                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{progress}}%</div>
+                                </div>
+                                <div class="col">
+                                    <div class="progress progress-sm mr-2">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: {{progress}}%" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Row -->
+
+    <div class="row">
+        <!-- Area Chart -->
+        <div class="col-xl-8 col-lg-7">
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Your Academic Progress</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    <div class="list-group">
+                        <a href="{{url_for('views.rec_1', id=current_user.id)}}" class="list-group-item list-group-item-action">Good Deeds & Volunteer</a>
+                        <a href="{{url_for('views.rec_2', id=current_user.id)}}" class="list-group-item list-group-item-action">Academic Activities</a>
+                        <a href="{{url_for('views.rec_3', id=current_user.id)}}" class="list-group-item list-group-item-action">Subjects Work</a>
+                        <a href="{{url_for('views.rec_4', id=current_user.id)}}" class="list-group-item list-group-item-action">Practical Exam</a>
+                        <a href="{{url_for('views.rec_5', id=current_user.id)}}" class="list-group-item list-group-item-action">Permission Records</a>
+                        <a href="{{url_for('views.rec_6', id=current_user.id)}}" class="list-group-item list-group-item-action">Prayer Summary</a>
+                        <a href="{{url_for('views.rec_7', id=current_user.id)}}" class="list-group-item list-group-item-action">Homecoming Records</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pie Chart -->
+        <div class="col-xl-4 col-lg-5">
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Profile</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    <table class="table table-stripped">
+                        <tr>
+                            <td>Full Name</td>
+                            <td>:</td>
+                            <td>{{current_user.full_name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Username</td>
+                            <td>:</td>
+                            <td>{{current_user.username}}</td>
+                        </tr>
+                        <tr>
+                            <td>Student ID Number</td>
+                            <td>:</td>
+                            <td>{{current_user.student_id}}</td>
+                        </tr>
+                        <tr>
+                            <td>Grade</td>
+                            <td>:</td>
+                            <td>{{current_user.grade}}</td>
+                        </tr>
+                        <tr>
+                            <td>Address</td>
+                            <td>:</td>
+                            <td>{{current_user.address}}</td>
+                        </tr>
+                        <tr>
+                            <td>Region Group</td>
+                            <td>:</td>
+                            <td>{{current_user.region_group}}</td>
+                        </tr>
+                        <tr>
+                            <td>Subdistrict</td>
+                            <td>:</td>
+                            <td>{{current_user.subdistrict}}</td>
+                        </tr>
+                        <tr>
+                            <td>District</td>
+                            <td>:</td>
+                            <td>{{current_user.district}}</td>
+                        </tr>
+                        <tr>
+                            <td>Province</td>
+                            <td>:</td>
+                            <td>{{current_user.province}}</td>
+                        </tr>
+                        <tr>
+                            <td>ZIP Code</td>
+                            <td>:</td>
+                            <td>{{current_user.zipcode}}</td>
+                        </tr>
+                    </table>
+                    <hr />
+                    <a href="{{url_for('views.update_profile', id=current_user.id)}}" class="btn btn-primary">Update</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Row -->
+</div>
+<!-- /.container-fluid -->
+{% endblock container %}

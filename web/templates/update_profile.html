@@ -1,0 +1,136 @@
+{% extends 'base.html' %} {% block bs_css %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+{% endblock bs_css %} {% block container %}
+<div class="container-fluid h-100">
+    <div class="row d-flex justify-content-center">
+        <!-- Area Chart -->
+        <div class="col-xl-6 col-lg-6">
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center">
+                    <h6 class="m-0 font-weight-bold text-primary">Update Profile</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    <form action="" method="post">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" name="full_name" id="floatingInput" placeholder="Ahmad Badrun" value="{{current_user.full_name}}" />
+                            <label for="floatingInput">Full Name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" name="username" id="floatingInput" placeholder="john123" value="{{current_user.username}}" />
+                            <label for="floatingInput">Username</label>
+                        </div>
+                        <div class="row g-2 mb-3">
+                            <div class="col-md">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" name="student_id" id="floatingInputGrid" placeholder="1234" value="{{current_user.student_id}}" />
+                                    <label for="floatingInputGrid">Student ID Number</label>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="form-floating">
+                                    <select class="form-select" name="grade" id="floatingSelectGrid">
+                                        <option selected value="{{current_user.grade}}">{{current_user.grade}}</option>
+                                        <option value="Mattayom 1/1">Mattayom 1/1</option>
+                                        <option value="Mattayom 1/2">Mattayom 1/2</option>
+                                        <option value="Mattayom 2/1">Mattayom 2/1</option>
+                                        <option value="Mattayom 2/2">Mattayom 2/2</option>
+                                        <option value="Mattayom 3">Mattayom 3</option>
+                                        <option value="Mattayom 4">Mattayom 4</option>
+                                        <option value="Mattayom 5">Mattayom 5</option>
+                                        <option value="Mattayom 6">Mattayom 6</option>
+                                    </select>
+                                    <label for="floatingSelectGrid">Select Your Grade</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row g-3 mb-3">
+                            <div class="col-md">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" name="address" id="floatingInputGrid" placeholder="1234" value="{{current_user.address}}" />
+                                    <label for="floatingInputGrid">Address</label>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" name="region_group" id="floatingInputGrid" placeholder="1234" value="{{current_user.region_group}}" />
+                                    <label for="floatingInputGrid">Region Group</label>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" name="subdistrict" id="floatingInputGrid" placeholder="1234" value="{{current_user.subdistrict}}" />
+                                    <label for="floatingInputGrid">Subdistrict</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row g-3 mb-3">
+                            <div class="col-md">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" name="district" id="floatingInputGrid" placeholder="1234" value="{{current_user.district}}" />
+                                    <label for="floatingInputGrid">District</label>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" name="province" id="floatingInputGrid" placeholder="1234" value="{{current_user.province}}" />
+                                    <label for="floatingInputGrid">Province</label>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" name="zipcode" id="floatingInputGrid" placeholder="1234" value="{{current_user.zipcode}}" />
+                                    <label for="floatingInputGrid">ZIP Code</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" name="parents" id="floatingInputGrid" placeholder="1234" value="{{current_user.parents}}" />
+                                <label for="floatingInputGrid">Parent's Name</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" name="phone" id="floatingInputGrid" placeholder="1234" value="{{current_user.phone}}" />
+                                <label for="floatingInputGrid">Phone Number</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" name="best_friend" id="floatingInputGrid" placeholder="1234" value="{{current_user.best_friend}}" />
+                                <label for="floatingInputGrid">Best Friend</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" name="ambition" style="height: 100px"></textarea>
+                                <label for="floatingTextarea2">Ambition</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" name="motto" style="height: 100px"></textarea>
+                                <label for="floatingTextarea2">Motto</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" name="disease" id="floatingInputGrid" placeholder="1234" value="{{current_user.disease}}" />
+                                <label for="floatingInputGrid">Congenital Disease</label>
+                            </div>
+                        </div>
+                        <div class="d-grid">
+                            <button class="btn btn-primary" type="submit">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Row -->
+</div>
+{% endblock container %}
